@@ -1,5 +1,5 @@
 public class BinarySearch {
-    public static Integer search(int value, int[] array) {
+    public static Integer search(int value, int array[]) {
         int low = 0;
         int high = array.length - 1;
         while (low <= high) {
@@ -14,15 +14,15 @@ public class BinarySearch {
         }
         return null;
     }
-    public static void main(String[] args){
+    public static void main(String args[]){
         System.out.println("Tests:");
-        int[] test1 = {1, 2, 3, 4};
+        int test1[] = {1, 2, 3, 4};
         System.out.println(BinarySearch.search(1, test1) != null);
-        int[] test2 = {120, 160, 300, 800};
+        int test2[] = {120, 160, 300, 800};
         System.out.println(BinarySearch.search(500, test2) != null);
-        int[] test3 = {15, 20, 30, 34};
+        int test3[] = {15, 20, 30, 34};
         System.out.println(BinarySearch.search(34, test3) != null);
-        int[] test4 = {1, 2, 3, 4, 8};
+        int test4[] = {1, 2, 3, 4, 8};
         System.out.println(BinarySearch.search(3, test4) != null);
     }
 }
