@@ -2,8 +2,7 @@ public class Factorial {
     public static Integer count(int i) {
         if (i == 1 || i == 0)
             return 1;
-        else
-            return i * count(i - 1);
+        return i * count(i - 1);
     }
 
     public static void main(String args[]) {

@@ -3,8 +3,7 @@ public class Countdown {
         System.out.println(Integer.toString(i) + " Iterations left");
         if (i <= 0)
             return;
-        else
-            countdown(i - 1);
+        countdown(i - 1);
     }
 
     public static void main(String args[]) {
