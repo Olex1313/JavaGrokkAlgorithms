@@ -1,13 +1,13 @@
 public class QuickSort {
     public static void quickSort(int array[]) {
-        _quickSort(array, 0, array.length - 1);
+        quickSort(array, 0, array.length - 1);
     }
 
-    private static void _quickSort(int array[], int start, int end) {
+    private static void quickSort(int array[], int start, int end) {
         if (start < end + 1) {
             int partitionIndex = partition(array, start, end);
-            _quickSort(array, start, partitionIndex - 1);
-            _quickSort(array, partitionIndex + 1, end);
+            quickSort(array, start, partitionIndex - 1);
+            quickSort(array, partitionIndex + 1, end);
         }
     }
 
