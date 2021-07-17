@@ -18,7 +18,7 @@ public class Graph {
                 this.adjMatrix[i][j] = 0;
             }
         }
-        this.stack = new Stack<Integer>();
+        this.stack = new Stack<>();
     }
 
     public void addVertex(char label) {
@@ -36,7 +36,7 @@ public class Graph {
 
     private int getAdjUnvisitedVertex(int v) {
         for (int i = 0; i < nVerts; i++) {
-            if (adjMatrix[v][i] != 0 && vertexArray[i].isWasVisited() == false) {
+            if (adjMatrix[v][i] != 0 && !vertexArray[i].isWasVisited()) {
                 return i;
             }
         }
@@ -44,7 +44,7 @@ public class Graph {
     }
 
     public void DepthFirstSearch() {
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<>();
         vertexArray[0].setWasVisited(true);
         displayVertex(0);
         stack.push(0);
@@ -78,11 +78,30 @@ public class Graph {
                 queue.add(v2);
             }
         }
-
         for (int i = 0; i < nVerts; i++)
             vertexArray[i].setWasVisited(false);
-
     }
 
+    public static void main(String[] args) {
+        Graph graph = new Graph();
+        graph.addVertex('A'); //0
+        graph.addVertex('B'); //1
+        graph.addVertex('C'); //2
+        graph.addVertex('D'); //3
+        graph.addVertex('E'); //4
+        graph.addVertex('F'); //5
+        graph.addVertex('G'); //6
+
+        graph.addEdge(0,1);
+        graph.addEdge(0,2);
+        graph.addEdge(0,3);
+        graph.addEdge(1,4);
+        graph.addEdge(3,5);
+        graph.addEdge(5,6);
+
+        System.out.println("Visits: ");
+        graph.DepthFirstSearch();
+        graph.BreadFirstSearch();
+    }
 
 }
