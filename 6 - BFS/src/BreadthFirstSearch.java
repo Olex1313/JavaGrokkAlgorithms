@@ -1,29 +1,6 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Node {
-    public Integer value;
-    public Node left, right;
-
-    public Node(Integer value) {
-        this.value = value;
-        this.left = null;
-        this.right = null;
-    }
-}
-
-class BinaryTree {
-    public Node root;
-
-    public BinaryTree(Integer value) {
-        this.root = new Node(value);
-    }
-
-    public BinaryTree() {
-        this.root = null;
-    }
-}
-
 public class BreadthFirstSearch {
     public static Boolean search(BinaryTree tree, Integer value) {
         Queue<Node> q = new LinkedList<>();
